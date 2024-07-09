@@ -1,39 +1,53 @@
 import {registerBlockType} from '@wordpress/blocks';
-import {textControl} from '@wordpress/components';
+import {TextControl} from '@wordpress/components';
 import {useBlockProps} from '@wordpress/block-editor';
 
-registerBlockType('wp-gutenberg/sketchfab', {
+registerBlockType('my-blocks/sketchfab', {
     title: 'Sketchfab embed',
-    icon: 'video-alt3',
+    descriptioin: '',
     category: 'embed',
+    icon: 'smiley',
     attributes: {
         url: {
             type: 'string',
             default: ''
         }
     },
-    edit({attributes, setAttributes}) {
+    edit:({attributes, setAttributes}) => {
         const blockProps = useBlockProps();
-        return(<div {...blockProps}>
-            <textControl
-                label="Sketchfab URL"
-                value={attributes.url}
-                onChange={(url) => setAttributes({url})}
-            />
-            {attributes.url && (
-                <iframe
-                    title="Sketchfab"
-                    width="600"
-                    height="450"
-                    src={'${attributes.url}/embed'}
-                    allow='autoplay; fullscreen; vr'>
-                </iframe>
-            )}
-        </div>);
+        return React.createElement(
+            React.Fragment,
+            null,
+            React.createElement(
+                'div', 
+                blockProps, 
+                React.createElement(TextControl, {
+                    label: 'Sketchfab URL',
+                    value: attributes.url,
+                    onChange: (url) => setAttributes({url})
+                }),
+                attributes.url && React.createElement('iframe', {
+                    title: 'Sketchfab',
+                    width: '600',
+                    height: '450',
+                    src: attributes.url + '/embed',
+                    allow: 'autoplay; fullscreen; vr'
+                })
+            )
+        );
     },
-    save({attributes}) {
+    save:({attributes}) => {
         const blockProps = useBlockProps.save();
-        return(
+        return React.createElement(React.Fragment, null, React.createElement('div', blockProps,
+            attributes.url && React.createElement('iframe', {
+                    title: 'Sketchfab',
+                    width: '600',
+                    height: '450',
+                    src: attributes.url + '/embed',
+                    allow: 'autoplay; fullscreen; vr'
+                })
+        ));
+        /*return(
             <div {...blockProps}>
             {attributes.url && (
                 <iframe
@@ -44,6 +58,6 @@ registerBlockType('wp-gutenberg/sketchfab', {
                     allow='autoplay; fullscreen; vr'>
                 </iframe>
             )}
-        </div>);
+        </div>);*/
     }
 })

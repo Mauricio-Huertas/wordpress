@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "wp-scripts build && node-sass src/style.css  build/style.css && node-sass src/editor.css  build/editor.css",
+    "build": "wp-scripts build && sass src/style.scss  build/style.css && sass src/editor.scss  build/editor.css",
     "start": "wp-scripts start"
   },
   "keywords": [],
@@ -11,9 +11,12 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@wordpress/scripts": "^28.1.0"
+    "@wordpress/scripts": "^28.2.0"
   },
   "dependencies": {
-    "@wordpress/components": "^28.1.0"
+    "@wordpress/block-editor": "^13.1.0",
+    "@wordpress/blocks": "^13.1.0",
+    "@wordpress/components": "^28.1.0",
+    "sass": "^1.77.6"
   }
 }
