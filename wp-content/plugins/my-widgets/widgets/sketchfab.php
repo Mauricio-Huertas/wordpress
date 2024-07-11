@@ -30,7 +30,7 @@ add_action('elementor/init', function () {
         }
         protected function _register_controls(){
             $this->start_controls_section(
-                'section-content',['label' => __('Opciones', 'my-widgets')]
+                'section_content',['label' => __('Opciones', 'my-widgets')]
             );
             $this->add_control("url-sketcfab",[
                 'label' => __('URL', 'my-widgets'),
@@ -58,5 +58,5 @@ add_action('elementor/init', function () {
     function register_sketchfab_widget(){
         \Elementor\Plugin::instance()->widgets_manager->register(new Sketchfab_Widget());
     }
-    add_action('elementor/widgets/widgets_register', 'register_sketchfab_widget');
+    add_action('elementor/widgets/widgets_registered', 'register_sketchfab_widget');
 });

@@ -1,4 +1,5 @@
 (function($){
+    console.log('test')
     const sketchfabWidgetHandle = function($scope, $){
         console.log('test')
     };
