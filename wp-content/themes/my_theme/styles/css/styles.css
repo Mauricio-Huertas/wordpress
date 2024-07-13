@@ -1,12 +1,14 @@
+@import url(./fonts.css);
+
 /*Header Styles*/
 .my-main-menu{
     width: 90%;
     margin: 2rem 5%;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0,.7);
+    background-color: #0e0e0e;
     padding: 1rem 2rem;
-    border-radius: 20px;
+    border-radius: 10px;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,13 +28,18 @@
 }
 
 .my-navbar li a{
-    color: white;
+    color: #F0F5FA;
+    font-family: 'Nunito', sans-serif;
+}
+
+.my-navbar li a:hover{
+    text-decoration: underline;
 }
 
 /*General Styles*/
 .relative-container.elementor-element{
     position: relative;
-    min-height: 80vh;
+    min-height: 100vh;
     overflow: hidden;
     z-index: -1;
 }
@@ -52,6 +59,7 @@
     height: 100%;
     max-width: unset;
     object-fit: cover;
+
 }
 
 .content-container.elementor-element{
@@ -61,6 +69,58 @@
 
 .slicknav_menu {
 	display:none;
+}
+
+/*About Me Styles*/
+.aboutme-background{
+    min-width: 100%;
+}
+
+/*Blog Styles*/
+.blog{
+    background: #0e0e0e;
+    border-radius: 20px;
+}
+.ast-separate-container #primary, .ast-separate-container.ast-left-sidebar #primary, .ast-separate-container.ast-right-sidebar #primary {
+    margin-top: 200px;
+}
+.ast-article-inner{
+    background: #171717 !important;
+    border-radius: 20px !important;
+}
+.entry-title a{
+    color: #F0F5FA;
+    font-family: 'Numans', sans-serif;
+}
+.ast-excerpt-container p{
+    color: #7a7a7a;
+    font-family: 'Nunito', sans-serif;
+}
+.post-title{
+    color: #F0F5FA;
+    font-family: 'Numans', sans-serif;
+    margin-bottom: 15px;
+}
+
+/*Proyects styles*/
+body{
+    background-color: #0e0e0e !important;
+}
+.ast-container .content-area ul{
+    padding-top: 80px;
+}
+ul{
+    list-style: none;
+}       
+ul div h2{
+    color: #F0F5FA;
+    font-family: 'Numans', sans-serif;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.attachment-post-thumbnail{
+    transition: sacle;
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 40em) {
